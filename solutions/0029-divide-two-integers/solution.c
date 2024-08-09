@@ -1,0 +1,5 @@
+int divide(int dividend, int divisor) {
+    if(dividend==-2147483648 && divisor==-1)
+        return (long long)2147483647;
+    return (long long)dividend/divisor;
+}
