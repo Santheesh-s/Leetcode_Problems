@@ -4,6 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nums=filter(lambda x:x%3==0 and x%2==0,nums)
-        if sum(nums)==0: return 0
-        return sum(nums)/len(nums)
+        count=0
+        n=0
+        for i in nums:
+            if i%6==0:
+                count+=i
+                n+=1;
+        if(n>0):
+            return count//n
+        return 0
