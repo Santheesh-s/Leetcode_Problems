@@ -4,8 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        for i in range(len(nums)-1):
-            for j in range(i+1,len(nums)):
-                if bin(nums[i]|nums[j])[-1]=='0':
-                    return True
-        return False
+        count=0;
+        for i in nums:
+            if((i&1)==0):
+                count+=1;
+            if(count>=2):
+                return True;
+        return False;
