@@ -9,7 +9,5 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             nums[i] = alist.get(i);
         }
-
-        System.out.println(Arrays.toString(nums)); 
     }
 }
