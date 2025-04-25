@@ -1,5 +1,5 @@
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
-    // Calculate the length of the list
+
     int len = 0;
     struct ListNode *temp = head;
     while (temp != NULL) {
@@ -7,12 +7,10 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
         temp = temp->next;
     }
 
-    // Check if n is greater than the length of the list
     if (n > len) {
-        return head; // n is invalid, return the original list
+        return head; 
     }
 
-    // Special case: Remove the head node
     if (n == len) {
         struct ListNode* newHead = head->next;
         free(head);
