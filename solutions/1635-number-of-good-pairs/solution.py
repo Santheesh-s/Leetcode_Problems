@@ -4,10 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        n=len(nums)
+        d={}
         count=0
-        for i in range(0,n):
-            for j in range(i+1,n):
-                if nums[i]==nums[j]:
-                    count+=1
-        return count
+        for i in nums:
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+        for i in d.values():
+            if i!=1:
+                count+=(i*(i-1)/2)
+        return count;
