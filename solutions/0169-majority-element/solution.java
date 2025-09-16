@@ -1,22 +1,15 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        Map<Integer, Integer> freq = new HashMap<>();
-        int majorityElement = nums[0];
-        int maxFrequency = 0;
-
-        // Populate the frequency map
-        for (int i = 0; i < nums.length; i++) {
-            int count = freq.getOrDefault(nums[i], 0) + 1;
-            freq.put(nums[i], count);
-
-            // Update the majority element if current element has a higher frequency
-            if (count > maxFrequency) {
-                maxFrequency = count;
-                majorityElement = nums[i];
-            }
+        int cand = nums[0],count=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(count==0)
+                cand=nums[i];
+            if(cand==nums[i])
+                 count++;
+            else 
+                 count--;
         }
-
-        return majorityElement;
+    return cand;
     }
 }
-
