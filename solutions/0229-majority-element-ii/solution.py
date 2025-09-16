@@ -5,13 +5,13 @@ class Solution(object):
         :rtype: List[int]
         """
         d={}
+        ls=set()
+        n=len(nums)
         for i in nums:
             if i in d:
                 d[i]+=1
             else:
                 d[i]=1
-        res=[]
-        for i,j in d.items():
-            if j>(len(nums)/3):
-                res.append(i)
-        return res
+            if d[i]>n/3:
+                ls.add(i)
+        return list(ls)
