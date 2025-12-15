@@ -8,6 +8,5 @@ class Solution {
             s[j]=sc;
             i++;j--;
         }
-        System.out.println(s);
     }
 }
