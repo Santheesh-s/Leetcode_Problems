@@ -1,13 +1,19 @@
-bool isPalindrome(int x) {
-    int temp=x;
-    long int rev=0;
-    if(x<0 || (x!=0 && x%10==0)) return false;
-    while(x!=0)
+bool reverse(char *arr)
+{
+    int l=0,r=strlen(arr)-1;
+    while(l<r)
     {
-        rev=rev*10+x%10;
-        x/=10;
+        if(arr[l]!=arr[r])
+            return false;
+        l++;r--;
     }
-    if(rev==temp)
-        return true;
-    return false;
+    return true;
+}
+bool isPalindrome(int x) {
+    char charArray[20]; 
+
+    // Use snprintf for safety (specify buffer size)
+    snprintf(charArray, sizeof(charArray), "%d", x); 
+
+    return reverse(charArray);
 }
