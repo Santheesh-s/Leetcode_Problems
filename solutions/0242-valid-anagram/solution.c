@@ -1,15 +1,11 @@
+int compare(const void *a,const void *b)
+{
+    return *(char*)a - *(char *)b;
+}
+
 bool isAnagram(char* s, char* t) {
-    int a=strlen(s);
-    int b=strlen(t);
-    int arr[26]={};
-    if(a!=b) return false;
-    for(int i=0;i<a;i++)
-    {
-        arr[s[i]-97]-=1;
-        arr[t[i]-97]+=1;
-    }
-    for(int i=0;i<26;i++)
-        if(arr[i]!=0)
-            return false;
-    return true;
+    qsort(s,strlen(s),sizeof(char),compare);
+    qsort(t,strlen(t),sizeof(char),compare);
+    return 0==strcmp(s,t);
+
 }
